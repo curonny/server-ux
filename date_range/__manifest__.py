@@ -6,7 +6,7 @@
     "version": "16.0.1.0.7",
     "category": "Uncategorized",
     "website": "https://github.com/OCA/server-ux",
-    "author": "ACSONE SA/NV, Odoo Community Association (OCA)",
+    "author": "ACSONE SA/NV, Odoo Community Association (OCA), PROCESS CONTROL TECHNOLOGY, S.L.",
     "license": "LGPL-3",
     "installable": True,
     "depends": [

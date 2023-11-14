@@ -43,7 +43,7 @@ class DateRangeGenerator(models.TransientModel):
         store=True,
         required=True,
     )
-    date_end = fields.Date("End date", compute="_compute_date_end", readonly=False)
+    date_end = fields.Date("End date", compute="_compute_date_end", readonly=False, store=True)
     type_id = fields.Many2one(
         comodel_name="date.range.type",
         string="Type",
@@ -275,6 +275,7 @@ class DateRangeGenerator(models.TransientModel):
 
     @api.depends("date_start")
     def _compute_date_end(self):
+        self.ensure_one()
         if not self.type_id or not self.date_start:
             return
         if self.type_id.autogeneration_unit and self.type_id.autogeneration_count:
